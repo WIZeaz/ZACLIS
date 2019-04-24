@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from post import views as post_views
+from index import views as index_views
 urlpatterns = [
+    path('',index_views.index),
     path('admin/', admin.site.urls),
     path('post/',post_views.postIndex),
-    path('post/<str:post_name>', post_views.showPost)
+    path('post/<str:post_link>', post_views.showPost)
 ]
