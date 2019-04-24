@@ -3,11 +3,11 @@ from django.http import HttpResponse
 from post.models import post
 # Create your views here.
 def showPost(request,post_name):
-    postlist=post.objects.all()
-    s="Postlist:<br>"
-    for i in postlist:
-        s=s+"title: "+i.title+"  release time: "+str(i.release_time)+"<br>"
-    return HttpResponse(s)
+    thisPost=post.objects.filter(link=post_name)
+    if (thisPost[0]!=None):
+        s=thisPost[0].title+"<br>"+thisPost[0].content
+        return HttpResponse(s)
+    return HttpResponse("Error: this post is not exist!")
 
 def postIndex(request):
     return render(request,'index.html')
