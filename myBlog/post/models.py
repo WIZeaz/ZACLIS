@@ -1,13 +1,19 @@
 from django.db import models
-from index.models import tag
 # Create your models here.
+
+class tag(models.Model):
+    name=models.CharField('name',max_length=50,primary_key=True)
+    description=models.CharField('description',max_length=100)
+    def __str__(self):
+        return self.name
+
 class post(models.Model):
     title=models.CharField('title',max_length=50,primary_key=True)
     release_time=models.DateField('release_time')
     modify_time=models.DateField('modify_time')
     content=models.TextField('content')
     link=models.CharField('link',max_length=30)
-    tags=models.ManyToManyField(tag)
+    #tags=models.ManyToManyField('tags',tag)
     def __str__(self):
         return self.title
 

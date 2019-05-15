@@ -18,6 +18,8 @@ def postIndex(request):
     postList=post.objects.all()
     s=str(len(postList))+" post(s) totally: <br>"
     for i in postList:
-        s=s+"<a href=\""+i.link+"\">"+i.title+" release time: "+str(i.release_time)+"</a> <br>"
-        for j in i.tags
+        s=s+"<a href=\""+i.link+"\">"+i.title+" release time: "+str(i.release_time)+"</a> <br>Tags: "
+       # for j in i.tags:
+       #     s=s+j.name+"  "
+       # s=s+"<br>"
     return HttpResponse(s)
