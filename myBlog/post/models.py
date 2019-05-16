@@ -7,7 +7,6 @@ class tag(models.Model):
     def __str__(self):
         return self.name
 
-
 class post(models.Model):
     title=models.CharField('title',max_length=50,primary_key=True)
     release_time=models.DateField('release_time')
