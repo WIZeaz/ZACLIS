@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+{% load static %}
+
+<link href="{% static "general.css" %}"  rel="stylesheet" type="text/css">
+<title>Index</title>
+</head>
+
+<body>
+<div id="mainwindowWrapper">
+	{% include 'banner.html' %} 
+	<div></div>
+	{% include 'navBar.html' %}
+	<main>
+		{% block content %}
+		<div> this is content.</div>
+		{% endblock %}
+
+		{% block right %}
+		<div> this is right. </div>
+		{% endblock %}
+
+		<div style="clear:both"></div>
+	</main>
+	<div></div>
+	{% include 'footer.html' %}
+</div>
+</body>
+</html>

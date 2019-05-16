@@ -106,7 +106,8 @@ article {
 }
 
 body {
-	background: #2BC0FF;
+	/*background: #2BC0FF;*/
+	background: aquamarine;
 }
 
 .pinnedPost {

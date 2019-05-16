@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load myTags %}
+{% block content %}
+
+<div id="left">
+    <section id="content"> 
+        {% for post,tags in postList%}
+        <article class="Post" > 
+            <div class="postTitle"><a href="{{ post.link }}"> {{post.title}} </a></div> 
+            <i><div class="PostInfo">
+                发布于: {{post.release_time}} / 最后修改于: {{post.modify_time}}
+               
+            </div>
+            <div class="PostInfo"> 
+                文章标签： 
+                {% for tag in tags %}
+                <a href="/tag/{{ tag }}"> {{ tag }} </a>  
+                {% endfor %}
+            </div></i>
+            <div class="PostInfo">
+                {% autoescape off %}
+                {{ post.content|toMarkdown }}
+                {% endautoescape %}
+            </div>
+        </article>
+        {% endfor %}
+    </section>
+</div>
+    
+{% endblock %}
+
+{% block right%}
+
+<div id="right">
+    你现在在 {{ request.url }}
+</div>
+
+{% endblock %}

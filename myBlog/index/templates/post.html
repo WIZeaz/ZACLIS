@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load myTags %}
+{% block content %}
+<main>
+    <div id="left">
+        <section id="content"> 
+            {% autoescape off %}
+            {{ post.content|toMarkdown }}
+            {% endautoescape %}
+        </section>
+    </div>
+</main>
+{% endblock %}
+
+{% block right %}
+<div id="right">
+        right
+</div>
+{% endblock %}

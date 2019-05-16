@@ -19,7 +19,8 @@ from post import views as post_views
 from index import views as index_views
 urlpatterns = [
     path('',index_views.index),
-    path('admin/', admin.site.urls),
+    path('tag/<str:tag_name>',index_views.tagsView),
+    path('console/', admin.site.urls),
     path('post/',post_views.postIndex),
-    path('post/<str:post_link>', post_views.showPost)
+    path('post/<str:post_link>', post_views.showPost),
 ]
