@@ -1,4 +1,5 @@
 pip install django
-py3 manage.py makemigrations
-py3 manage.py migrate
-nohup py3 manage.py runserver > server.stdout 2>server.stderr & disown
+pip install markdown
+python3 manage.py makemigrations
+python3 manage.py migrate
+nohup python3 manage.py runserver 0.0.0.0:80 > server.stdout 2>server.stderr & disown
