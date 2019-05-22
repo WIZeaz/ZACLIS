@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from post.models import post
+from post.models import tag
 from django.db.models import ObjectDoesNotExist
 from django import template
 
@@ -25,6 +26,7 @@ def generateList(postList):
 
 def postIndex(request):
     postList=post.objects.all()
+    tags=tag.objects.all()
     #for i in postList:
     #    i.tags=i.tags.all()
-    return render(request,'postList.html',{'postList':generateList(postList),})
+    return render(request,'postList.html',{'postList':generateList(postList),'tags':tags})

@@ -17,10 +17,13 @@
 		{% block content %}
 		<div> this is content.</div>
 		{% endblock %}
-
-		{% block right %}
-		<div> this is right. </div>
-		{% endblock %}
+		
+		<div id="right">
+			{% include 'right_fixed.html' %}
+			{% block right %}
+			<div> this is right. </div>
+			{% endblock %}
+		</div>    
 
 		<div style="clear:both"></div>
 	</main>
