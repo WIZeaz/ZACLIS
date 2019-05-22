@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>侧边栏停靠</title>
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <style>
+            .affixed-element-top.affix{
+                top:10px;
+            }
+            .affixed-element-top.affixed-bottom{
+                position:relative;
+            }
+            .affixed-element-bottom.affix{
+                bottom:10px;
+            }
+            .affixed-element-bottom.affix-bottom{
+                position:relative;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="container">
+           <div class="col-md-3">
+               <ul class="list-group affixed-element-top js-affixed-element-top">
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+               </ul>
+           </div>
+           <div class="col-md-6 js-content">
+               hello
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+well
+           </div>
+           <div class="col-md-3">
+               <ul class="list-group affixed-element-bottom js-affixed-element-bottom">
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+                   <li class="list-group-item">hello</li>
+               </ul>
+           </div>
+       </div>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+<script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+<script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        $(".js-affixed-element-top").affix({
+            offset:{
+            
+            }
+        })
+        $(".js-affixed-element-bottom").affix({
+            offset:{
+                bottom:200
+            }
+        })
+    })
+</script>
+
+</body>
+</html>
