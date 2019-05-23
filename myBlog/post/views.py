@@ -26,7 +26,8 @@ def generateList(postList):
 
 def postIndex(request):
     postList=post.objects.all()
-    tags=tag.objects.all()
     #for i in postList:
     #    i.tags=i.tags.all()
-    return render(request,'postList.html',{'postList':generateList(postList),'tags':tags})
+    print(request.__class__)
+    print(dir(request))
+    return render(request,'postList.html',{'postList':generateList(postList)})

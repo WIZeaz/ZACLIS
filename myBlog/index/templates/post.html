@@ -3,6 +3,7 @@
 {% block content %}
 <main>
     <div id="left">
+        <div> <h1> {{post.title}} </h1></div>
         <section id="content"> 
             {% autoescape off %}
             {{ post.content|toMarkdown }}
@@ -13,7 +14,5 @@
 {% endblock %}
 
 {% block right %}
-
-        right
-
+    right
 {% endblock %}

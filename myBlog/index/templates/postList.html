@@ -6,7 +6,7 @@
     <section id="content"> 
         {% for post,tags in postList%}
         <article class="Post" > 
-            <div class="postTitle"><a href="{{ post.link }}"> {{post.title}} </a></div> 
+            <div class="postTitle"><a href="/post/{{ post.link }}"> {{post.title}} </a></div> 
             <i><div class="PostInfo">
                 发布于: {{post.release_time}} / 最后修改于: {{post.modify_time}}
                
@@ -19,7 +19,7 @@
             </div></i>
             <div class="PostInfo">
                 {% autoescape off %}
-                {{ post.content|toMarkdown }}
+                {{ post.content|toMarkdown|toBrief }}
                 {% endautoescape %}
             </div>
         </article>
