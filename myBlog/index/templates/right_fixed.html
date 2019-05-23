@@ -1,8 +1,12 @@
-
+{% load myTags %}
 <div>
 <div> 标签云：</div>
-{% for tag in tags %}
-<div><a href='/tag/{{ tag }}'> {{ tag }} </a></div>
-{% endfor %}
-<div>你现在在: {{ request.path }}</div>
+<h4>
+    {% for tag in tags %}
+        <span class="label label-info"><a class="tag" href="/tag/{{ tag }}"> {{ tag }} </a></span>
+        {% if forloop.counter|mod3 %}
+        <br>
+        {% endif %}
+    {% endfor %}
+</h4>
 </div>

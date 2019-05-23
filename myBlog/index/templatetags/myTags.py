@@ -15,5 +15,13 @@ def toBrief(s):
         ed=s.find('</p>',ed+1)
         if ed==-1:
             return s
+        elif ed>=100:
+            break
     ed=ed+4
     return s[:ed]+"<p> ...... </p>"
+    
+@register.filter
+def mod3(s):
+    if s%3==0:
+        return True
+    return False

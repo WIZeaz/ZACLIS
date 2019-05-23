@@ -4,7 +4,11 @@
 	}
 	#banner{
 		z-index:0;
-		height:100%;
+	}
+	.tag,.tag:hover{
+		width:100%;
+		text-decoration: none;
+		color: #FFFFFF;
 	}
 	.bg{
 		position:fixed;
@@ -33,10 +37,6 @@
 	.article{
 		text-indent:35px;
 	}
-	
-	
-	
-	
 	#footer{
 		margin-top: 30px;
 		text-align:center;
@@ -45,7 +45,10 @@
 	}
 	
 	.testborder{
-
 		margin-top:5px;
 		margin-bottom: 5px;
 	}
+	#content {
+		text-indent:35px;
+	}
+	

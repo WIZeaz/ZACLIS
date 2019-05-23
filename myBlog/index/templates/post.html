@@ -3,7 +3,8 @@
 {% block content %}
 <main>
     <div id="left">
-        <div> <h1> {{post.title}} </h1></div>
+        <div> <h1><strong> {{post.title}} </strong></h1></div>
+        <h4 style="text-indent:35px"><em> 发布于: {{ post.release_time }} / 最后修改于: {{post.modify_time}}</em></h4>
         <section id="content"> 
             {% autoescape off %}
             {{ post.content|toMarkdown }}

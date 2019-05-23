@@ -1,21 +1,36 @@
 {% extends 'base.html' %}
+{% load myTags %}
 {% block content %}
-<div id="left">
-    <section id="content"> 
-        <article class="pinnedPost">
-            <img src="/static/pic1.png" alt="pic1" class="PinnedImg">
-            <div class="pinnedTitle"> <a href="blog.html"> title </a> </div> 
-            <div class="PinnedInfo"> <a href="blog.html">This is content. This is content. This is content. This is content. This is content. This is content. This is content.</a></div>
-            <div style="clear:both"></div>
-        </article>
-        <article class="Post" href="static/banner.jpg"> 
-            <div class="postTitle">title</div> 
-            <div class="PostInfo">This is content. This is content. This is content. This is content. This is content. This is content. This is content.</div>
-        </article>
-    </section>
-</div>
+    {% for post,tags in postList%}
+    <article class="testborder">
+        <!--文章前面部分-->
+        <div class="title">
+            <h1><a href="/post/{{ post.link }}"> {{post.title}} </a></h1>
+            <h4 style="text-indent:35px"><em> 发布于: {{ post.release_time }} / 最后修改于: {{post.modify_time}}</em></h4>
+            <h4 style="text-indent:35px;">
+                {% for tag in tags %}
+                    <span class="label label-info"><a class="tag" href="/tag/{{ tag }}"> {{ tag }} </a></span>
+                {% endfor %}
+            </h4>
+        </div>
+        <!--正文部分-->
+        <div class="article">
+            {% autoescape off %}
+            {{ post.content|toMarkdown|toBrief }}
+            {% endautoescape %}
+        </div>
+    </article>
+    {% if not forloop.last%} <hr> {% endif%}
+    {% endfor %}
+    <!--分割线-->
+    
 {% endblock %}
 
 {% block right %}
-    right
+    <p>
+        <em>这一部分</em>
+        <br>
+        是右边栏部分
+        <br>
+    </p>
 {% endblock %}
