@@ -197,8 +197,7 @@ h2, h3 {
     border-top-color: #000!important
 }
 .label {
-    border: 1px solid #000;
-    margin-bottom:5px;
+    border: 1px solid #000
 }
 .table {
     border-collapse: collapse!important

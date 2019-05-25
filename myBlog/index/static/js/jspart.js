@@ -10,6 +10,7 @@ jQuery(function($) {
 	});
 });
 
+
 //导航条点击
 $("#mytab2 a").click(function(e){
     e.preventDefault();
@@ -19,7 +20,8 @@ $("#mytab2 a").click(function(e){
 //返回顶部按钮
 $(function(){
     $(".js-affixed-element-bottom").affix({
-        offset:{
-        }
+        offset: {
+			top: 200
+		}
     })
 });

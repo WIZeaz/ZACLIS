@@ -1,5 +1,6 @@
 from django import template
 from markdown import markdown
+from random import randint
 #from markdown import markdown
 
 register=template.Library()
@@ -29,3 +30,8 @@ def mod4(s):
     if s%4==0:
         return True
     return False
+
+@register.filter
+def randomTagStyle(tagname):
+    l=['default','primary','success','info','warning','danger']
+    return '<span class="label label-'+l[randint(0,5)]+'"><a class="tag" href="/tag/'+tagname+'">'+tagname+'</a></span>'

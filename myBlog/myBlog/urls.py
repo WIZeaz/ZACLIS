@@ -27,10 +27,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('',index_views.index),
-    path('admin/', admin.site.urls),
-    path('post/',post_views.postIndex),
     path('post/<str:post_link>', post_views.showPost),
-    path('aa/',post_views.Is),
-    re_path('^media/(?P<path>.*)$',  serve, {"document_root":MEDIA_ROOT}, name='media')
+    path('tag/<str:tag_name>',index_views.tagsView),
+    path('console/', admin.site.urls),
+    path('getPost/',post_views.getPost),
+    re_path('^media/(?P<path>.*)$',  serve, {"document_root":MEDIA_ROOT}, name='media'),
+    path('gallery/',index_views.gallery),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

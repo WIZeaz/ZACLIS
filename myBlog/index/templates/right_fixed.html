@@ -6,7 +6,9 @@
         <p>
         {% for tag in tags %}
             <span style="margin-right:5px; margin-bottom:5px;">
-                <span class="label label-info"><a class="tag" href="/tag/{{ tag }}"> {{ tag }} </a></span> 
+
+                {{ tag.name|randomTagStyle|safe }}
+
             </span>
             {% if forloop.counter|mod4 %}
             </p>

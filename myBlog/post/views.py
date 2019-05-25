@@ -1,36 +1,40 @@
-
 from django.shortcuts import render
 from django.http import HttpResponse
+from post.models import *
+from django.db.models import ObjectDoesNotExist
+from django import template
 
 from myBlog.settings import MEDIA_ROOT
-from post import models
 
-
-from django.db.models import ObjectDoesNotExist
 # Create your views here.
+
+
 def showPost(request,post_link):
     try:
         thisPost=post.objects.get(link=post_link)
-        s=str(thisPost.title)+"<br>"+str(thisPost.content)
-        print("result=",s.find('\n'))
-        s=s.replace('\n','<br>')
-        return HttpResponse(s)
+        #s=str(thisPost.title)+"<br>"+str(thisPost.content)
+        #s=s.replace('\n','<br>')
+        return render(request,'post.html',{'post':thisPost})
     except ObjectDoesNotExist:
         return HttpResponse("Error: this post does not exist!")
 
+def generateList(postList):
+    List=[]
+    for i in postList:
+        item=[i,i.tags.all()]
+        List.append(item)
+    return List
 
 def postIndex(request):
-    from post.models import post, Blogimage
     postList=post.objects.all()
-    s=str(len(postList))+" post(s) totally: <br>"
-    for i in postList:
-        s=s+"<a href=\""+i.link+"\">"+i.title+" release time: "+str(i.release_time)+"</a> <br>"
-    return HttpResponse(s)
+    #for i in postList:
+    #    i.tags=i.tags.all()
+    return render(request,'postList.html',{'postList':generateList(postList)})
 
-def Is(request):
-    from post.models import post, Blogimage
-    ML = Blogimage.objects.all()
-    aa = str(len(ML)) + " post(aa) totally: <br>"
-    for i in ML:
-       aa=aa+'<a href="/media/'+str(i.path)+'">'+i.title+'</a> <br>'
-    return HttpResponse(aa)
+def getPost(request):
+    try:
+        postName=request.GET.get('title','')
+        s=post.objects.get(title=postName)
+        return HttpResponse(s.content)
+    except ObjectDoesNotExist:
+        return HttpResponse("")
