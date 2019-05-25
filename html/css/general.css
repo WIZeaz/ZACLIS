@@ -49,3 +49,17 @@
 		margin-top:5px;
 		margin-bottom: 5px;
 	}
+	.mediaBorder {
+	padding: 0px;
+    margin-top: 30px;
+    transition: 0.15s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.mediaBorder:hover{
+	transform: translateY(-10px) scale(1.02);
+}
+
+.mediaText {
+	padding:10px;
+}
