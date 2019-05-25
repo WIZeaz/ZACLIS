@@ -9,7 +9,9 @@
             <h4 style="text-indent:35px"><em> 发布于: {{ post.release_time }} / 最后修改于: {{post.modify_time}}</em></h4>
             <h4 style="text-indent:35px;">
                 {% for tag in tags %}
-                    <span class="label label-info"><a class="tag" href="/tag/{{ tag }}"> {{ tag }} </a></span>
+                    <span style="margin-right:5px; margin-bottom:5px;">
+                        <span class="label label-info"><a class="tag" href="/tag/{{ tag }}"> {{ tag }} </a></span> 
+                    </span>
                 {% endfor %}
             </h4>
         </div>
@@ -27,10 +29,4 @@
 {% endblock %}
 
 {% block right %}
-    <p>
-        <em>这一部分</em>
-        <br>
-        是右边栏部分
-        <br>
-    </p>
 {% endblock %}

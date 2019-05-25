@@ -21,6 +21,6 @@ urlpatterns = [
     path('',index_views.index),
     path('tag/<str:tag_name>',index_views.tagsView),
     path('console/', admin.site.urls),
-    path('post/',post_views.postIndex),
+    path('getPost/',post_views.getPost),
     path('post/<str:post_link>', post_views.showPost),
 ]

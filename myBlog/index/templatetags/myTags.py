@@ -6,7 +6,11 @@ register=template.Library()
 
 @register.filter
 def toMarkdown(s):
-    return markdown(s)
+    return markdown(s,extensions=[
+        'markdown.extensions.extra',
+        'markdown.extensions.codehilite',
+        'markdown.extensions.toc',
+    ])
 
 @register.filter
 def toBrief(s):
@@ -21,7 +25,7 @@ def toBrief(s):
     return s[:ed]+"<p> ...... </p>"
     
 @register.filter
-def mod3(s):
-    if s%3==0:
+def mod4(s):
+    if s%4==0:
         return True
     return False

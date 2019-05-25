@@ -1,12 +1,19 @@
 {% load myTags %}
-<div>
-<div> 标签云：</div>
-<h4>
-    {% for tag in tags %}
-        <span class="label label-info"><a class="tag" href="/tag/{{ tag }}"> {{ tag }} </a></span>
-        {% if forloop.counter|mod3 %}
-        <br>
-        {% endif %}
-    {% endfor %}
-</h4>
+<div class="right">
+    <div> 标签云：</div>
+    <h4>
+    <p>
+        <p>
+        {% for tag in tags %}
+            <span style="margin-right:5px; margin-bottom:5px;">
+                <span class="label label-info"><a class="tag" href="/tag/{{ tag }}"> {{ tag }} </a></span> 
+            </span>
+            {% if forloop.counter|mod4 %}
+            </p>
+            <p>
+            {% endif %}
+        {% endfor %}
+        </p>
+    </p>
+    </h4>
 </div>

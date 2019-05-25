@@ -29,3 +29,11 @@ def postIndex(request):
     #for i in postList:
     #    i.tags=i.tags.all()
     return render(request,'postList.html',{'postList':generateList(postList)})
+
+def getPost(request):
+    try:
+        postName=request.GET.get('title','')
+        s=post.objects.get(title=postName)
+        return HttpResponse(s.content)
+    except ObjectDoesNotExist:
+        return HttpResponse("")
