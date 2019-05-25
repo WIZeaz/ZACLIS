@@ -15,12 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
+from myBlog.settings import MEDIA_ROOT
 from post import views as post_views
 from index import views as index_views
+from django.conf.urls import url
+from django.views.static import serve
+from django.contrib import admin
+from django.urls import path, include, re_path
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('',index_views.index),
-    path('tag/<str:tag_name>',index_views.tagsView),
-    path('console/', admin.site.urls),
-    path('getPost/',post_views.getPost),
+    path('admin/', admin.site.urls),
+    path('post/',post_views.postIndex),
     path('post/<str:post_link>', post_views.showPost),
-]
+    path('aa/',post_views.Is),
+    re_path('^media/(?P<path>.*)$',  serve, {"document_root":MEDIA_ROOT}, name='media')
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

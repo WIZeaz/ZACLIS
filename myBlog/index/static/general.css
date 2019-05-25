@@ -1,0 +1,132 @@
+/* CSS Document */
+#mainwindowWrapper{
+	margin-left: 10%;
+	margin-right:10%;
+	padding:2rem 2rem;
+	background:rgba(255,255,255,0.80);
+}
+#navBar{
+	clear:both;
+}
+#navBar ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	display: block;
+}
+#navBar li{
+	font-size: 1.5em;
+	font-weight: bold;
+	background:#CAB500;
+	text-align: center;
+	float:left;
+}
+#navBar a{
+	text-decoration: none;
+	display: block;
+	width:120px;
+	transition: background 0.5s;
+}
+#navBar a:hover,#navBar a:active{
+	background: #FF5800;
+}
+#left{
+	width:79%;
+	float:left;
+	border-style: solid;
+	border:1;
+}
+#right{
+	margin-left: 80%;
+	width:20%;
+	border-style: solid;
+	border-color: red;
+	border:1;
+	/*position:absolute;
+	top:0em;
+	left:80%;*/
+}
+#footer{
+	text-align:center;
+}
+#banner{
+	position: relative;
+	margin:0;
+}
+img{
+	overflow: hidden;
+	
+}
+main{
+	position:relative;
+}
+#title {
+	position:absolute;
+	left:0;
+	bottom:10px;
+	font-size: 5em;
+	font-weight: bold;
+	color:white;
+}
+
+.PinnedImg {
+	width:80%;
+	float:left;
+	margin-right: 1%;
+	background-color:gray;
+}
+
+.PinnedInfo {
+	text-indent:2em;
+}
+.PostImg {
+	height:100px;
+	width:100px;
+	float:left;
+	background-color:gray;
+}
+
+.PostInfo {
+	text-indent:2em;
+}
+.postTitle{
+	font-size:2.5em;
+	font-weight: bold;
+}
+article {
+	clear:both;
+	margin-top:2em;
+	margin-bottom: 2em;
+}
+
+.pinnedTitle {
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+body {
+	background: #2BC0FF;
+}
+
+.pinnedPost {
+	border:1px solid;
+}
+
+.Post {
+	cursor:pointer;
+	border:1px solid;
+}
+
+#content {
+	margin:1% 1%;
+}
+
+article a{
+	text-decoration: none;
+	color: black;
+	transition:color 0.2s;
+}
+article a:hover,a:active{
+	color: grey;
+}
