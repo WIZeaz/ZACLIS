@@ -4,13 +4,13 @@ from post.models import *
 from django.db.models import ObjectDoesNotExist
 from post.views import generateList
 def index(request):
-    postList=post.objects.all()
+    postList=post.objects.all().order_by('-modify_time','-release_time')
     return render(request,'index.html',{'postList':generateList(postList)})
 
 def tagsView(request,tag_name):
     try:   
         t=tag.objects.get(name=tag_name)
-        postList=t.post_set.all()
+        postList=t.post_set.all().order_by('-modify_time','-release_time')
         return render(request,'index.html',{'postList':generateList(postList)})
     except ObjectDoesNotExist:
         return HttpResponse("Error: tag "+ tag_name +" does not exist!")

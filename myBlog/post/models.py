@@ -14,7 +14,7 @@ class post(models.Model):
     link=models.CharField('link',max_length=30)
     tags=models.ManyToManyField(tag)
     class meta:
-        ordering=('modify_time','release_time',)
+        ordering=('-modify_time','-release_time',)
     def __str__(self):
         return self.title
 
