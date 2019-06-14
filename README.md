@@ -1,15 +1,16 @@
-# ZACLIS  
-ZACLIS is a blog system which you can deploy to your own server and use markdown grammer edit your article. This is a project for my UML class design. However, we glad to see you to deploy it to your server if you think our work is awesome and nice to delpoy.
-
 # 项目简介
-作为一个程序猿，我需要记录我的一些生活，学习经历。同时，我希望我的这些经历记录在一个漂亮的网站上。
+ZACLIS是一个易于部署的博客系统，包含完整的博客页面和后台管理系统，您只需要在您的服务器运行start脚本，即可建立属于自己的博客。
 
-既然我需要记录我的学习，那我必须得让我的工作（代码）高亮；为了更方便的使用图片等媒体信息，我需要一个专门的媒体库来储存
+您可以观看我们的demo网站： http://wizeaz.top/
 
-### ZACLIS博客技术框架
+
+
+# ZACLIS博客技术框架
 前端使用bootstrap框架搭配html+css+javascript
 
 后端使用python+Django框架
+
+
 
 # 成员分工
 张业鸿：后端框架搭建、项目测试、前端需求指导
@@ -42,13 +43,11 @@ ZACLIS is a blog system which you can deploy to your own server and use markdown
 
 
 # 使用方法
-博客部署的网站为 http://wizeaz.top/
 
-管理博客内容页面为 http://wizeaz.top/console/
 
-用户名是 zaclis
 
-密码 Zaclis123456
+
+首次使用需要在ZACLIS/myBlog目录下运行`python manage.py createsuperuser`命令来创建超级用户，以进入后台管理系统。
 
 ## Linux/mac系统
 linux系统下运行start.sh

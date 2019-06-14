@@ -7,3 +7,4 @@ python manage.py makemigrations
 python manage.py migrate
 echo =========server ready for running=========
 python manage.py runserver 0.0.0.0:80
+pause
